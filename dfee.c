@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 /**
- * dfree - Frees array of pointers
+ * dfree_ - Frees array of pointers
  * @arr: array of pointers
  *
  * Return: nothing
  *
  */
 
-void dfree(char **arr)
+void dfree_(char **arr)
 {
 	int i = 0;
 

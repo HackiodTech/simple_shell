@@ -11,20 +11,20 @@
 int Builtin_(char **segments)
 {
 	sf strct[] = {
-		{"exit", exitin},
-		{"env", _printenv},
+		{"exit", exitin_},
+		{"env", PrintEnv},
 		{NULL, NULL}};
-	int i;
+	int q;
 
-	i = 0;
-	while (strct[i].s != NULL)
+	q = 0;
+	while (strct[q].s != NULL)
 	{
-		if (_strcmp(segments[0], strct[i].s) == 0)
+		if (strcmp_(segments[0], strct[q].s) == 0)
 		{
-			strct[i].f(segments);
+			strct[q].f(segments);
 			return (0);
 		}
-		i++;
+		q++;
 	}
 	return (1);
 }

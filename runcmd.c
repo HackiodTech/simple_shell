@@ -2,14 +2,14 @@
 #include <unistd.h>
 
 /**
- * runlcmd - executes full path commands e.g "/bin/ls"
+ * RunCmd - executes full path commands e.g "/bin/ls"
  * @cmd: absolute path to command's program
  * @tokens: the command
  * @envt: environment variables
  * Return: 0 on success
  */
 
-int runlcmd(char *cmd, char **tokens, char **envt)
+int RunCmd(char *cmd, char **tokens, char **envt)
 {
 	pid_t pid;
 

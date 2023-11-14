@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 /**
- * sfree - Frees array
+ * sfree_ - Frees array
  * @arr: array of pointers
  *
  * Return: nothing
  *
  */
 
-void sfree(char *arr)
+void sfree_(char *arr)
 {
 	if (!arr)
 		return;

@@ -1,92 +1,91 @@
 #include "simple_shell.h"
 
 /**
- * _strlen - returns length of string
+ * strlen_ - returns length of string
  * @s: variable holding string
  * Return: length of string
  */
-int _strlen(char *s)
+int strlen_(char *s)
 {
-int cnt;
+	int cnt;
 
-for (cnt = 0; *(s + cnt) != '\0'; cnt++)
-{
-
-}
-return (cnt);
+	for (cnt = 0; *(s + cnt) != '\0'; cnt++)
+	{
+	}
+	return (cnt);
 }
 /**
- * _strcpy - copies string to buffer
+ * strcpy_ - copies string to buffer
  * @dest: to be copied to
  * @src: to be copied
  * Return: Always pointer to dest
  */
 
-char *_strcpy(char *dest, char *src)
+char *strcpy_(char *dest, char *src)
 {
-int i;
+	int q;
 
-for (i = 0; *(src + i) != '\0'; i++)
-{
-dest[i] = src[i];
-}
-dest[i] = '\0';
-return (dest);
+	for (q = 0; *(src + q) != '\0'; q++)
+	{
+		dest[q] = src[q];
+	}
+	dest[q] = '\0';
+	return (dest);
 }
 /**
- * _strcat - appends string to another string (concatenates)
+ * StrCat_ - appends string to another string (concatenates)
  * @dest: string to be extended in length
  * @src: string
  * Return: pointer to the resulting string dest
  */
 
-char *_strcat(char *dest, char *src)
+char *StrCat_(char *dest, char *src)
 {
-	int i, j;
+	int q, j;
 
-	i = 0;
-	while (dest[i] != '\0')
+	q = 0;
+	while (dest[q] != '\0')
 	{
-		i++;
+		q++;
 	}
 	j = 0;
 	while (src[j] != '\0')
 	{
-		dest[i] = src[j];
-		i++;
+		dest[q] = src[j];
+		q++;
 		j++;
 	}
-	dest[i] = '\0';
+	dest[q] = '\0';
 	return (dest);
 }
 /**
- * _strcmp - compares two strings
+ * strcmp_ - compares two strings
  * @s1: string
  * @s2: string
  * Return: work exactly like strcmp
  */
 
-int _strcmp(char *s1, char *s2)
+int strcmp_(char *s1, char *s2)
 {
-	int i, j;
+	int q, j;
 
-	i = 0;
+	q = 0;
 	j = 0;
-	while (s1[i] != '\0' && j == 0)
+	while (s1[q] != '\0' && j == 0)
 	{
-		j = s1[i] - s2[i];
-		i++;
+		j = s1[q] - s2[q];
+		q++;
 	}
 	return (j);
 }
 /**
- * _strdup - pointer to newly allocated space in memeory
+ * strdup_ - pointer to newly allocated space in memeory
  * @str: string to be duplicatd in new memory
  * Return: NULL if insufficient memory or pointer
  */
-char *_strdup(char *str)
+char *strdup_(char *str)
 {
-	unsigned int i, j;
+	unsigned int q, j;
 	char *ar;
 
 	if (str == NULL)
@@ -101,11 +100,11 @@ char *_strdup(char *str)
 	{
 		return (0);
 	}
-	for (i = 0; i < j; i++)
+	for (q = 0; q < j; q++)
 	{
-		ar[i] = str[i];
+		ar[q] = str[q];
 	}
-	ar[i] = '\0';
+	ar[q] = '\0';
 	free(ar);
 	return (ar);
 }

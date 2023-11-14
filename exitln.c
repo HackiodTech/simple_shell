@@ -2,27 +2,27 @@
 #include <stdlib.h>
 
 /**
- * exitin - calls the exit function
+ * exitin_ - calls the exit function
  * @segments: array of pointers
  *
  * Return: 0 on success
  */
 
-int  exitin(char **segments)
+int exitin_(char **segments)
 {
 	int status = 0;
 
 	if (segments[1] != NULL)
-		status = _atoi(segments[1]);
-	dfree(segments);
+		status = Atoi_(segments[1]);
+	dfree_(segments);
 	exit(status);
 }
 /**
- * _atoi - convert a string to an integer
+ * Atoi_ - convert a string to an integer
  * @s: string
  * Return: integer
  */
-int _atoi(char *s)
+int Atoi_(char *s)
 {
 	int i = 0, sign = -1, num = 0, skim = 0;
 

@@ -1,14 +1,14 @@
 #include "simple_shell.h"
 
 /**
- * _printenv - implement the env built-in
+ * PrintEnv - implement the env built-in
  * that prints the current environment
  * @segments: command and its args
  *
  * Return: 0 on success
  */
 
-int _printenv(char **segments)
+int PrintEnv(char **segments)
 {
 	int i;
 	char *str;
@@ -25,6 +25,6 @@ int _printenv(char **segments)
 		environ = environ + 1;
 	}
 	environ = temp;
-	dfree(segments);
+	dfree_(segments);
 	return (0);
 }

@@ -20,26 +20,26 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 		{
 			continue;
 		}
-		dfree(segments);
+		dfree_(segments);
 		segments = tokenize(buf);
 		if (Builtin_(segments) == 0)
 			continue;
-		dfree(fullpath);
-		fullpath = getfullpath(segments);
+		dfree_(fullpath);
+		fullpath = fullpath(segments);
 		if (fullpath == NULL)
 		{
 			perror(av[0]);
-			dfree(segments);
+			dfree_(segments);
 			continue;
 		}
-		runlcmd(fullpath, segments, env);
+		RunCmd(fullpath, segments, env);
 		if (flag)
-			sfree(fullpath);
+			sfree_(fullpath);
 	}
 
 	free(buf);
-	dfree(segments);
-	dfree(fullpath);
+	dfree_(segments);
+	dfree_(fullpath);
 
 	return (0);
 }
