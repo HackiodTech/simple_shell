@@ -22,7 +22,7 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 		}
 		dfree(segments);
 		segments = tokenize(buf);
-		if (builtin(segments) == 0)
+		if (Builtin_(segments) == 0)
 			continue;
 		dfree(fullpath);
 		fullpath = getfullpath(segments);

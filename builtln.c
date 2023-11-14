@@ -3,18 +3,17 @@
 #include <stddef.h>
 
 /**
- * builtin - Handles shell built in fucntions
+ * Builtin_ - Handles shell built in fucntions
  * @segments: an array of pointers
  *
  * Return: 0 on success
  */
-int builtin(char **segments)
+int Builtin_(char **segments)
 {
 	sf strct[] = {
 		{"exit", exitin},
 		{"env", _printenv},
-		{NULL, NULL}
-	};
+		{NULL, NULL}};
 	int i;
 
 	i = 0;

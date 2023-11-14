@@ -35,7 +35,7 @@ void sfree(char *arr);
 int runlcmd(char *cmd, char **tokens, char **envt);
 char *getfullpath(char **segments);
 int no_delim(char *str);
-int builtin(char **segments);
+int Builtin_(char **segments);
 int  exitin(char **segments);
 int _printenv(char **segments);
 char *_getenv(char *str);
