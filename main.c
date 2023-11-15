@@ -4,10 +4,9 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 {
 	char *buf = NULL;
 	char **segments = NULL;
-	char *fullpath = NULL;
+	char **fullPath = NULL;
 	size_t n = 0;
 	int imode = isatty(STDIN_FILENO);
-	int flag = 1;
 
 	while (imode)
 	{
@@ -24,22 +23,19 @@ int main(int ac __attribute__((unused)), char **av, char **env)
 		segments = tokenize(buf);
 		if (Builtin_(segments) == 0)
 			continue;
-		dfree_(fullpath);
-		fullpath = fullpath(segments);
-		if (fullpath == NULL)
+		dfree_(fullPath);
+		if (fullPath == NULL)
 		{
 			perror(av[0]);
 			dfree_(segments);
 			continue;
 		}
-		RunCmd(fullpath, segments, env);
-		if (flag)
-			sfree_(fullpath);
+		env ++;
 	}
 
 	free(buf);
 	dfree_(segments);
-	dfree_(fullpath);
+	dfree_(fullPath);
 
 	return (0);
 }
